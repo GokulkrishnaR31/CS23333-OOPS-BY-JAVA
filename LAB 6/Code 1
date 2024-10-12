@@ -1,0 +1,39 @@
+CODE :
+import java.util.Scanner;
+
+public class StringProcessor {
+    public static String processString(String input) {
+        String[] words = input.split(" ");
+        StringBuilder output = new StringBuilder();
+
+        for (String word : words) {
+            char char1 = word.charAt(0);
+            char char2 = word.charAt(1);
+
+            if (char1 == char2) {
+                output.append(Character.toUpperCase(char1));
+            } else {
+                int pos1 = char1 - 'a';
+                int pos2 = char2 - 'a';
+                int difference = Math.abs(pos1 - pos2);
+                char resultChar = (char) ('a' + difference);
+                output.append(Character.toUpperCase(resultChar));
+            }
+        }
+
+        return output.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+
+        String processedInput = input.split("//")[0].replaceAll("\\s+", "");
+        String result = processString(processedInput);
+
+        System.out.println(result);
+
+        scanner.close();
+    }
+}

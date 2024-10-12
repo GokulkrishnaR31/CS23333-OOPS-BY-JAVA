@@ -1,0 +1,39 @@
+CODE:
+import java.util.Scanner;
+
+public class WordProcessor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input1 = scanner.nextLine();
+        int input2 = scanner.nextInt();
+
+        String[] words = input1.split(" ");
+
+        int firstIndex = input2 % 101;
+        int secondIndex = input2 / 101;
+
+        String processedFirstWord = processWord(words[firstIndex]);
+        String processedSecondWord = processWord(words[secondIndex]);
+
+        System.out.println(processedFirstWord + " " + processedSecondWord);
+    }
+
+    private static String processWord(String word) {
+        int len = word.length();
+        int mid = len / 2;
+
+        String middleToBegin;
+        String middleToEnd;
+
+        if (len % 2 == 0) {
+            middleToBegin = new StringBuilder(word.substring(0, mid)).reverse().toString();
+            middleToEnd = word.substring(mid);
+        } else {
+            middleToBegin = new StringBuilder(word.substring(0, mid + 1)).reverse().toString();
+            middleToEnd = word.substring(mid);
+        }
+
+        return middleToBegin + middleToEnd;
+    }
+}

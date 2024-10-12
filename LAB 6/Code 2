@@ -1,0 +1,47 @@
+CODE:
+import java.util.Scanner;
+
+public class StringProcessor {
+    public static String processStrings(String input1, String input2) {
+        String combined = input1 + input2;
+        combined = combined.replaceAll("\\s+", "");
+
+        boolean[] seen = new boolean[26];
+        StringBuilder uniqueChars = new StringBuilder();
+
+        for (char c : combined.toCharArray()) {
+            int index = c - 'a';
+
+            if (!seen[index]) {
+                seen[index] = true;
+                uniqueChars.append(c);
+            }
+        }
+
+        char[] resultArray = uniqueChars.toString().toCharArray();
+        java.util.Arrays.sort(resultArray);
+
+        for (int i = 0; i < resultArray.length / 2; i++) {
+            char temp = resultArray[i];
+            resultArray[i] = resultArray[resultArray.length - 1 - i];
+            resultArray[resultArray.length - 1 - i] = temp;
+        }
+
+        String result = new String(resultArray);
+
+        return result.isEmpty() ? "null" : result;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input1 = scanner.nextLine();
+        String input2 = scanner.nextLine();
+
+        String 1  result = processStrings(input1, input2);
+
+        System.out.println(result);
+
+        scanner.close();
+    }
+}

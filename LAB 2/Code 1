@@ -1,0 +1,18 @@
+PROGRAM:
+Write a program for pattern printing.
+CODE:
+import java.util.Scanner;
+public class Sequence
+{
+    public static void main(String args[])
+    {
+        Scanner A=new Scanner(System.in);
+        int n=A.nextInt();
+        String t="1";
+        for (int i=2;i<=n;i++)
+        {
+            t+=" "+i+" "+t;
+        }
+        System.out.println(t);
+    }
+}

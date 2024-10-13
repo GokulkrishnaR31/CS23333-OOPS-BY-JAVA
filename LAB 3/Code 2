@@ -1,0 +1,45 @@
+PROGRAM:
+Write a program to return sum of longest sequence
+CODE:
+import java.util.Scanner;
+
+public class LongestPositiveSequenceSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int input1 = scanner.nextInt();
+        int[] input2 = new int[input1];
+        
+        for (int i = 0; i < input1; i++) {
+            input2[i] = scanner.nextInt();
+        }
+        
+        int result = findLongestPositiveSequenceSum(input2);
+        System.out.println(result);
+    }
+
+    public static int findLongestPositiveSequenceSum(int[] array) {
+        int maxSum = -1;
+        int currentSum = 0;
+        int maxLength = 0;
+        int currentLength = 0;
+
+        for (int num : array) {
+            if (num >= 0) {
+                currentSum += num;
+                currentLength++;
+                if (currentLength > maxLength) {
+                    maxLength = currentLength;
+                    maxSum = currentSum;
+                } else if (currentLength == maxLength) {
+                    maxSum += currentSum;
+                }
+            } else {
+                currentSum = 0;
+                currentLength = 0;
+            }
+        }
+
+        return maxLength > 0 ? maxSum : -1;
+    }
+}

@@ -1,0 +1,37 @@
+PROGRAM:
+Write a program to set schedule.
+CODE:
+import java.util.Scanner;
+public class Wake
+{
+    public static void main(String args[])
+    {
+        Scanner A=new Scanner(System.in);
+        int d=A.nextInt();
+        boolean v=A.nextBoolean();
+        String wt;
+        if(v)
+        {
+            if(d>1 && d<7)
+            {
+                wt="7:00";
+            }
+            else
+            {
+                wt="9:00";
+            }
+        }
+        else
+        {
+            if(d>=2 && d<=5)
+            {
+                wt="5:00";
+            }
+            else
+            {
+                wt="6:00";
+            }
+        }
+        System.out.println(wt);
+    }
+}

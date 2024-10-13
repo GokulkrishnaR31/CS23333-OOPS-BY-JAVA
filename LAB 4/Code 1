@@ -1,0 +1,33 @@
+PROGRAM:
+Write a program to invoke different constructors.
+CODE:
+public class Student {
+    private String name;
+    private int rollno;
+    public Student() {
+        System.out.println("No-arg constructor is invoked");
+        this.name = null;
+        this.rollno = 0;
+    }
+    public Student(String name) {
+        System.out.println("1 arg constructor is invoked");
+        this.name = name;
+        this.rollno = 0;
+    }
+    public Student(String name, int rollno) {
+        System.out.println("2 arg constructor is invoked");
+        this.name = name;
+        this.rollno = rollno;
+    }
+    public void display() {
+        System.out.println("Name =" + this.name + " , Roll no = " + this.rollno);
+    }
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        Student student2 = new Student("Rajalakshmi");
+        Student student3 = new Student("Lakshmi", 101);
+        student1.display();
+        student2.display();
+        student3.display();
+    }
+}

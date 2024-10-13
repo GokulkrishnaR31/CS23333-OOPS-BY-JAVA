@@ -1,0 +1,61 @@
+PROGRAM:
+Write a program to create class mobile.
+CODE:
+public class Mobile {
+    private String manufacturer;
+    private String operating_system;
+    public String color;
+    private int cost;
+
+    public Mobile(String manufacturer, String operating_system, String color, int cost) {
+        this.manufacturer = manufacturer;
+        this.operating_system = operating_system;
+        this.color = color;
+        this.cost = cost;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setOperatingSystem(String operating_system) {
+        this.operating_system = operating_system;
+    }
+
+    public String getOperatingSystem() {
+        return operating_system;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public int getCost() {
+     return cost;
+    }
+
+    @Override
+    public String toString() {
+        return "manufacturer = " + manufacturer + "\n" +
+               "operating_system = " + operating_system + "\n" +
+               "color = " + color + "\n" +
+               "cost = " + cost;
+    }
+
+    public static void main(String[] args) {
+        Mobile mobile = new Mobile("Redmi", "Andriod", "Blue", 34000);
+        System.out.println(mobile.toString());
+    }
+}

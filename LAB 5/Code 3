@@ -1,0 +1,36 @@
+PROGRAM:
+Create a class Mobile and implement inheritance.
+CODE:
+class Mobile {
+    public Mobile() {
+        System.out.println("Basic Mobile is Manufactured");
+    }
+}
+
+class CameraMobile extends Mobile {
+    public CameraMobile() {
+        System.out.println("Camera Mobile is Manufactured");
+    }
+
+    public void newFeature() {
+        System.out.println("Camera Mobile with 5MG px");
+    }
+}
+
+class AndroidMobile extends CameraMobile {
+    public AndroidMobile() {
+        System.out.println("Android Mobile is Manufactured");
+    }
+
+    public void androidMobile() {
+        System.out.println("Touch Screen Mobile is Manufactured");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AndroidMobile androidMobile = new AndroidMobile();
+        androidMobile.newFeature();
+        androidMobile.androidMobile();
+    }
+}

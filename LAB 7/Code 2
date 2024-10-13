@@ -1,0 +1,75 @@
+PROGRAM:
+Write a program to create interface for sports.
+CODE:
+import java.util.Scanner;
+
+interface Sports {
+    public void setHomeTeam(String name);
+    public void setVisitingTeam(String name);
+}
+
+interface Football extends Sports {
+    public void homeTeamScored(int points);
+    public void visitingTeamScored(int points);
+}
+
+class College implements Football {
+    private String homeTeam;
+    private String visitingTeam;
+    private int homeTeamScore;
+    private int visitingTeamScore;
+
+    public void setHomeTeam(String name) {
+        this.homeTeam = name;
+    }
+
+    public void setVisitingTeam(String name) {
+        this.visitingTeam = name;
+    }
+
+    public void homeTeamScored(int points) {
+        this.homeTeamScore += points;
+    }
+
+    public void visitingTeamScored(int points) {
+        this.visitingTeamScore += points;
+    }
+
+    public String getWinner() {
+        if (homeTeamScore > visitingTeamScore) {
+            return homeTeam;
+        } else if (homeTeamScore < visitingTeamScore) {
+            return visitingTeam;
+        } else {
+            return "It's a tie match.";
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String homeTeamName = scanner.nextLine();
+        String visitingTeamName = scanner.nextLine();
+        int homeTeamScore = scanner.nextInt();
+        int visitingTeamScore = scanner.nextInt();
+
+        College match = new College();
+        match.setHomeTeam(homeTeamName);
+        match.setVisitingTeam(visitingTeamName);
+        match.homeTeamScored(homeTeamScore);
+        match.visitingTeamScored(visitingTeamScore);
+
+        System.out.println(homeTeamName + " " + homeTeamScore + " scored");
+        System.out.println(visitingTeamName + " " + visitingTeamScore + " scored");
+        String result = match.getWinner();
+        if (result.equals("It's a tie match.")) {
+            System.out.println(result);
+        } else {
+            System.out.println(result + " is the winner!");
+        }
+
+        scanner.close();
+    }
+}

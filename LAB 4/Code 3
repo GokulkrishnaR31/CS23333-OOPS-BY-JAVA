@@ -1,0 +1,41 @@
+PROGRAM:
+Using class calculate area and circumference.
+CODE:
+import java.util.Scanner;
+public class Circle {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public double calculateCircumference() {
+        return 2 * Math.PI * radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Area = " + String.format("%.2f", calculateArea()) + "\n" +
+               "Circumference = " + String.format("%.2f", calculateCircumference());
+    }
+
+    public static void main(String[] args) {
+        Scanner A=new Scanner(System.in);
+        int d=A.nextInt();
+        Circle circle = new Circle(d);
+
+        System.out.println(circle.toString());
+    }
+}

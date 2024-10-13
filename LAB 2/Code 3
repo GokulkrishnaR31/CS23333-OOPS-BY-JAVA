@@ -1,0 +1,22 @@
+PROGRAM:
+Write a program to print number to words.
+CODE:
+import java.util.Scanner;
+public class Num
+{
+    public static void main(String args[])
+    {
+        Scanner S=new Scanner(System.in);
+        int n=S.nextInt();
+        String[] w={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+        String r="";
+        while(n>0)
+        {
+            int d=n%10;
+            r=w[d]+" "+r;
+            n/=10;
+        
+        }
+        System.out.println(r.trim());
+    }
+}

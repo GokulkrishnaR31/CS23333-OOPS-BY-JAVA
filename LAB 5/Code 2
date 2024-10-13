@@ -1,0 +1,39 @@
+PROGRAM:
+Write a program for college admission using class.
+CODE:
+class College {
+    String collegeName;
+
+    public College(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void admitted() {
+        System.out.println("A student admitted in " + collegeName);
+    }
+}
+
+class Student extends College {
+    String studentName;
+    String department;
+
+    public Student(String collegeName, String studentName, String department) {
+        super(collegeName);
+        this.studentName = studentName;
+        this.department = department;
+    }
+
+    public void Course() {
+        System.out.println("CollegeName : " + collegeName);
+        System.out.println("StudentName : " + studentName);
+        System.out.println("Department : " + department);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("REC", "Venkatesh", "CSE");
+        student.admitted();
+        student.Course();
+    }
+}

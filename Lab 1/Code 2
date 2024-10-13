@@ -1,0 +1,17 @@
+PROGRAM:
+Write a java program to print last digit.
+
+CODE:
+
+import java.util.Scanner;
+import java.lang.Math;
+public class Last
+{
+    public static void main(String args[])
+    {
+        Scanner A=new Scanner(System.in);
+        int a=A.nextInt();
+        int b=Math.abs(a);
+        System.out.println(b%10);
+    }
+}

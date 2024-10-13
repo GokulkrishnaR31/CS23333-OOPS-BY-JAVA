@@ -1,0 +1,64 @@
+PROGRAM:
+Write a program to create interface called playable.
+CODE:
+import java.util.Scanner;
+
+interface Playable {
+    void play();
+}
+
+class Football implements Playable {
+    private String name;
+
+    public Football(String name) {
+        this.name = name;
+    }
+
+    public void play() {
+        System.out.println(name + " is Playing football");
+    }
+}
+
+class Volleyball implements Playable {
+    private String name;
+
+    public Volleyball(String name) {
+        this.name = name;
+    }
+
+    public void play() {
+        System.out.println(name + " is Playing volleyball");
+    }
+}
+
+class Basketball implements Playable {
+    private String name;
+
+    public Basketball(String name) {
+        this.name = name;
+    }
+
+    public void play() {
+        System.out.println(name + " is Playing basketball");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String name1 = scanner.nextLine();
+        String name2 = scanner.nextLine();
+        String name3 = scanner.nextLine();
+        Football footballPlayer = new Football(name1);
+        Volleyball volleyballPlayer = new Volleyball(name2);
+        Basketball basketballPlayer = new Basketball(name3);
+
+        footballPlayer.play();
+        volleyballPlayer.play();
+        basketballPlayer.play();
+
+        scanner.close();
+    }
+}
+  

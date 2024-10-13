@@ -1,0 +1,17 @@
+PROBLEM:
+Write a java program to sum last digit of 2 number.
+CODE:
+import java.util.Scanner;
+public class sum
+{
+    public static void main(String args[])
+    {
+        Scanner A=new Scanner(System.in);
+        int a=A.nextInt();
+        int b=A.nextInt();
+        int c=Math.abs(a);
+        int d=Math.abs(b);
+        int e=(c%10)+(d%10);
+        System.out.println(e);
+    }
+}

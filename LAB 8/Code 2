@@ -1,0 +1,31 @@
+PROGRAM:
+Implementation of final.
+CODE:
+class FinalExample {
+
+    private final int maxSpeed = 120; // Final variable
+
+    public void displayMaxSpeed() {
+        System.out.println("The maximum speed is: " + maxSpeed + " km/h");
+    }
+}
+
+class Subclass extends FinalExample {
+    // public void displayMaxSpeed() { // This would cause a compilation error
+    //     System.out.println("Cannot override a final method");
+    // }
+
+    public void showDetails() {
+        System.out.println("This is a subclass of FinalExample.");
+    }
+}
+
+public class Prog {
+    public static void main(String[] args) {
+        FinalExample obj = new FinalExample();
+        obj.displayMaxSpeed();
+
+        Subclass subobj = new Subclass();
+        subobj.showDetails();
+    }
+}
